@@ -169,6 +169,7 @@ void set_oneshot_mods(uint8_t mods)
 #if (defined(ONESHOT_TIMEOUT) && (ONESHOT_TIMEOUT > 0))
     oneshot_time = timer_read();
 #endif
+    send_keyboard_report();
 }
 void clear_oneshot_mods(void)
 {
@@ -176,6 +177,7 @@ void clear_oneshot_mods(void)
 #if (defined(ONESHOT_TIMEOUT) && (ONESHOT_TIMEOUT > 0))
     oneshot_time = 0;
 #endif
+    send_keyboard_report();
 }
 uint8_t get_oneshot_mods(void)
 {
